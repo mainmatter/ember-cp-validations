@@ -1,7 +1,7 @@
 import { moduleFor, test } from 'ember-qunit';
 
-moduleFor('validator:<%= dasherizedModuleName %>', 'Unit | Validator | <%= dasherizedModuleName %>', {
-  needs: ['validator:messages']
+moduleFor('cpvalidator:<%= dasherizedModuleName %>', 'Unit | Validator | <%= dasherizedModuleName %>', {
+  needs: ['cpvalidator:messages']
 });
 
 test('it works', function(assert) {

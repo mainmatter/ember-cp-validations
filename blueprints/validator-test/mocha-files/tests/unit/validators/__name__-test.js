@@ -8,7 +8,7 @@ describeModule(
   'validator:<%= dasherizedModuleName %>',
   '<%= classifiedModuleName %>Validator',
   {
-    needs: ['validator:messages']
+    needs: ['cpvalidator:messages']
   },
   function() {
     it('works', function() {

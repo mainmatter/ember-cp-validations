@@ -5,7 +5,7 @@ import { setupTest } from 'ember-mocha';
 describe('<%= classifiedModuleName %>Validator', function() {
   setupTest('validator:<%= dasherizedModuleName %>', {
     // Specify the other units that are required for this test.
-    needs: ['validator:messages']
+    needs: ['cpvalidator:messages']
   });
 
   // Replace this with your real tests.
