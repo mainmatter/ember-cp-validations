@@ -12,8 +12,8 @@ from 'ember-qunit';
 
 let model, validator, message;
 
-moduleFor('validator:ds-error', 'Unit | Validator | ds-error', {
-  needs: ['validator:messages'],
+moduleFor('cpvalidator:ds-error', 'Unit | Validator | ds-error', {
+  needs: ['cpvalidator:messages'],
   setup() {
     validator = this.subject();
   }

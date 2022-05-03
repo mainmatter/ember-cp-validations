@@ -3,13 +3,13 @@ import { moduleForModel, test } from 'ember-qunit';
 
 moduleForModel('order', 'Unit | Validations | Nested Model Relationships', {
   needs: [
-    'validator:messages',
-    'validator:ds-error',
-    'validator:presence',
-    'validator:length',
-    'validator:number',
-    'validator:belongs-to',
-    'validator:has-many',
+    'cpvalidator:messages',
+    'cpvalidator:ds-error',
+    'cpvalidator:presence',
+    'cpvalidator:length',
+    'cpvalidator:number',
+    'cpvalidator:belongs-to',
+    'cpvalidator:has-many',
     'model:order-line',
     'model:order-selection',
     'model:order-selection-question'

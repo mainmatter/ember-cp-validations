@@ -23,8 +23,8 @@ let defaultOptions = {
   on: ['firstName', 'lastName']
 };
 
-moduleFor('validator:dependent', 'Unit | Validator | dependent', {
-  needs: ['validator:messages', 'validator:presence'],
+moduleFor('cpvalidator:dependent', 'Unit | Validator | dependent', {
+  needs: ['cpvalidator:messages', 'cpvalidator:presence'],
   setup() {
     Validator = this.subject();
   }

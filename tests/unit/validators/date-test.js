@@ -8,8 +8,8 @@ import { moduleFor, test } from 'ember-qunit';
 
 let options, builtOptions, validator, message;
 
-moduleFor('validator:date', 'Unit | Validator | date', {
-  needs: ['validator:messages'],
+moduleFor('cpvalidator:date', 'Unit | Validator | date', {
+  needs: ['cpvalidator:messages'],
   setup() {
     validator = this.subject();
   }

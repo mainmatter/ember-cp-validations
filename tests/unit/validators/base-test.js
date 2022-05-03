@@ -12,8 +12,8 @@ from 'ember-qunit';
 
 let defaultOptions, options, validator, message;
 
-moduleFor('validator:length', 'Unit | Validator | base', {
-  needs: ['validator:messages'],
+moduleFor('cpvalidator:length', 'Unit | Validator | base', {
+  needs: ['cpvalidator:messages'],
   setup() {
     validator = BaseValidator.create();
   }

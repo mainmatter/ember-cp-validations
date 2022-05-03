@@ -1,9 +1,9 @@
 import Ember from 'ember';
 import DS from 'ember-data';
 import setupObject from '../../helpers/setup-object';
-import CollectionValidator from 'dummy/validators/collection';
-import LengthValidator from 'dummy/validators/length';
-import DSErrorValidator from 'dummy/validators/ds-error';
+import CollectionValidator from 'dummy/cpvalidators/collection';
+import LengthValidator from 'dummy/cpvalidators/length';
+import DSErrorValidator from 'dummy/cpvalidators/ds-error';
 import { validator, buildValidations } from 'ember-cp-validations';
 import { moduleFor, test } from 'ember-qunit';
 
@@ -12,8 +12,8 @@ moduleFor('foo', 'Integration | Validations | Factory - Dependent Keys', {
 });
 
 test('collection validator creates correct dependent keys', function(assert) {
-  this.register('validator:collection', CollectionValidator);
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:collection', CollectionValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let CollectionValidations = buildValidations({
     array: [
@@ -37,8 +37,8 @@ test('collection validator creates correct dependent keys', function(assert) {
 });
 
 test('ds-error validator creates correct dependent keys', function(assert) {
-  this.register('validator:ds-error', DSErrorValidator);
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:ds-error', DSErrorValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let DSErrorValidations = buildValidations({
     username: validator('ds-error')
@@ -57,8 +57,8 @@ test('ds-error validator creates correct dependent keys', function(assert) {
 });
 
 test('nested ds-error validator creates correct dependent keys', function(assert) {
-  this.register('validator:ds-error', DSErrorValidator);
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:ds-error', DSErrorValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let DSErrorValidations = buildValidations({
     'model.username': validator('ds-error')

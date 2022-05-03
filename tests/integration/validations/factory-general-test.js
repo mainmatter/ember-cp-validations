@@ -1,8 +1,8 @@
 import Ember from 'ember';
 import setupObject from '../../helpers/setup-object';
-import DefaultMessages from 'dummy/validators/messages';
-import PresenceValidator from 'dummy/validators/presence';
-import LengthValidator from 'dummy/validators/length';
+import DefaultMessages from 'dummy/cpvalidators/messages';
+import PresenceValidator from 'dummy/cpvalidators/presence';
+import LengthValidator from 'dummy/cpvalidators/length';
 import { validator, buildValidations } from 'ember-cp-validations';
 import { moduleFor, test } from 'ember-qunit';
 
@@ -248,7 +248,7 @@ test('default options', function(assert) {
 });
 
 test('global options', function(assert) {
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let Validations = buildValidations({
     firstName: {
@@ -284,7 +284,7 @@ test('global options', function(assert) {
 });
 
 test('custom messages object', function(assert) {
-  this.register('validator:messages', DefaultMessages);
+  this.register('cpvalidator:messages', DefaultMessages);
   let Validations = buildValidations({
     firstName: validator(function(value) {
       return this.createErrorMessage('test', value);
@@ -299,7 +299,7 @@ test('custom messages object', function(assert) {
 });
 
 test('null message object', function(assert) {
-  this.register('validator:messages', DefaultMessages);
+  this.register('cpvalidator:messages', DefaultMessages);
   let Validations = buildValidations({
     firstName: validator('presence', {
       presence: true,
@@ -472,8 +472,8 @@ test('disabled validations - cp with dependent key', function(assert) {
 });
 
 test('attribute validation result options hash', function(assert) {
-  this.register('validator:length', LengthValidator);
-  this.register('validator:presence', PresenceValidator);
+  this.register('cpvalidator:length', LengthValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
 
   let Validations = buildValidations({
     firstName: {
@@ -506,7 +506,7 @@ test('attribute validation result options hash', function(assert) {
 });
 
 test('attribute validation result options hash with cps', function(assert) {
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let Validations = buildValidations({
     firstName: {
@@ -827,8 +827,8 @@ test('validateAttribute - async validations', function(assert) {
 });
 
 test('warning validators api', function(assert) {
-  this.register('validator:length', LengthValidator);
-  this.register('validator:presence', PresenceValidator);
+  this.register('cpvalidator:length', LengthValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
 
   let Validations = buildValidations({
     password: {
@@ -875,8 +875,8 @@ test('warning validators api', function(assert) {
 });
 
 test('computed isWarning option', function(assert) {
-  this.register('validator:length', LengthValidator);
-  this.register('validator:presence', PresenceValidator);
+  this.register('cpvalidator:length', LengthValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
 
   let Validations = buildValidations({
     password: {
@@ -912,7 +912,7 @@ test('computed isWarning option', function(assert) {
 });
 
 test('options CP changes trigger attribute revalidation', function(assert) {
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let Validations = buildValidations({
     firstName: {
@@ -957,8 +957,8 @@ test('options CP changes trigger attribute revalidation', function(assert) {
 });
 
 test('lazy validators are actually lazy', function(assert) {
-  this.register('validator:length', LengthValidator);
-  this.register('validator:presence', PresenceValidator);
+  this.register('cpvalidator:length', LengthValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
 
   let customValidatorCount = 0;
 
@@ -999,8 +999,8 @@ test('lazy validators are actually lazy', function(assert) {
 });
 
 test('none lazy validators are actually not lazy', function(assert) {
-  this.register('validator:length', LengthValidator);
-  this.register('validator:presence', PresenceValidator);
+  this.register('cpvalidator:length', LengthValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
 
   let customValidatorCount = 0;
 
@@ -1044,8 +1044,8 @@ test('none lazy validators are actually not lazy', function(assert) {
 });
 
 test('validator should return correct error type', function(assert) {
-  this.register('validator:presence', PresenceValidator);
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let Validations = buildValidations({
     firstName: [
@@ -1070,8 +1070,8 @@ test('validator should return correct error type', function(assert) {
 });
 
 test('volatile validations should not recompute', function(assert) {
-  this.register('validator:presence', PresenceValidator);
-  this.register('validator:length', LengthValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
+  this.register('cpvalidator:length', LengthValidator);
 
   let Validations = buildValidations({
     firstName: [
@@ -1106,7 +1106,7 @@ test('volatile validations should not recompute', function(assert) {
 });
 
 test('load test', function(assert) {
-  this.register('validator:presence', PresenceValidator);
+  this.register('cpvalidator:presence', PresenceValidator);
 
   let Validations = buildValidations({
     a: validator('presence', true),

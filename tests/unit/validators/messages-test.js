@@ -7,7 +7,7 @@ import { moduleFor, test } from 'ember-qunit';
 
 let messages;
 
-moduleFor('validator:messages', 'Unit | Validator | messages', {
+moduleFor('cpvalidator:messages', 'Unit | Validator | messages', {
   setup() {
     messages = this.subject();
   }

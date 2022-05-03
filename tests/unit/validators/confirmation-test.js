@@ -11,8 +11,8 @@ from 'ember-qunit';
 
 let model, options, builtOptions, validator, message;
 
-moduleFor('validator:confirmation', 'Unit | Validator | confirmation', {
-  needs: ['validator:messages'],
+moduleFor('cpvalidator:confirmation', 'Unit | Validator | confirmation', {
+  needs: ['cpvalidator:messages'],
   setup() {
     validator = this.subject();
   }

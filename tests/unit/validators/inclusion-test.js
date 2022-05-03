@@ -10,8 +10,8 @@ from 'ember-qunit';
 
 let options, builtOptions, validator, message;
 
-moduleFor('validator:inclusion', 'Unit | Validator | inclusion', {
-  needs: ['validator:messages'],
+moduleFor('cpvalidator:inclusion', 'Unit | Validator | inclusion', {
+  needs: ['cpvalidator:messages'],
   setup() {
     validator = this.subject();
   }
