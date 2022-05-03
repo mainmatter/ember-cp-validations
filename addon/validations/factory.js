@@ -736,7 +736,7 @@ function createValidatorsFor(attribute, model) {
  * @return {Class} Validator class or undefined if not found
  */
 function lookupValidator(owner, type) {
-  let validatorClass = owner.factoryFor(`validator:${type}`);
+  let validatorClass = owner.factoryFor(`cpvalidator:${type}`);
 
   if (isNone(validatorClass)) {
     throw new Error(`[ember-cp-validations] Validator not found of type: ${type}.`);

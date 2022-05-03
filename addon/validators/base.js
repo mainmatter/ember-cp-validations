@@ -88,7 +88,7 @@ const Base = Ember.Object.extend({
 
     if (!isNone(owner)) {
       // Since default error messages are stored in app/validators/messages, we have to look it up via the owner
-      errorMessages = owner.factoryFor('validator:messages');
+      errorMessages = owner.factoryFor('cpvalidator:messages');
     }
 
     // If for some reason, we can't find the messages object (i.e. unit tests), use default
@@ -359,7 +359,7 @@ export default Base;
  * import { moduleFor, test } from 'ember-qunit';
  *
  * moduleFor('validator:unique-username', 'Unit | Validator | unique-username', {
- *     needs: ['validator:messages']
+ *     needs: ['cpvalidator:messages']
  * });
  *
  * test('it works', function(assert) {
